@@ -33,13 +33,9 @@ int check(char * str) {
 }
 
 int main(int argc, const char* argv[]){
-    FILE * file = fopen("/Users/alexanderr/Downloads/enable1.txt", "r");
-    if(file==NULL){
-        return -1;
-    }
     char * buf = malloc(1000);
     while(1){
-        char *res = fgets(buf, 1000, file);
+        char *res = fgets(buf, 1000, stdin);
         if(res==NULL){
             break;
         }
@@ -50,7 +46,6 @@ int main(int argc, const char* argv[]){
             printf("%d\n", check(buf));
         }
     }
-    fclose(file);
     free(buf);
 	return 0;
 }
